@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI Container Server for Flask Todo
+After=network.target
+
+[Service]
+User=ec2-user
+Group=nginx
+WorkingDirectory=www/cowin-vaccine-tracker-web/
+Environment="PATH=www/cowin-vaccine-tracker-web/venv/bin"
+ExecStart=www/cowin-vaccine-tracker-web/venv/bin/uwsgi --ini config/cowin.ini
+
+[Install]
+WantedBy=multi-user.target
