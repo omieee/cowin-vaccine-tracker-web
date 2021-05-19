@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=ec2-user
 Group=nginx
-WorkingDirectory=www/cowin-vaccine-tracker-web/
-Environment="PATH=www/cowin-vaccine-tracker-web/venv/bin"
-ExecStart=www/cowin-vaccine-tracker-web/venv/bin/uwsgi --ini config/cowin.ini
+WorkingDirectory=/home/ec2-user/www/cowin-vaccine-tracker-web/
+Environment="PATH=/home/ec2-user/www/cowin-vaccine-tracker-web/venv/bin"
+ExecStart=/home/ec2-user/www/cowin-vaccine-tracker-web/venv/bin/uwsgi --ini /home/ec2-user/www/cowin-vaccine-tracker-web/config/cowin.ini
 
 [Install]
 WantedBy=multi-user.target
